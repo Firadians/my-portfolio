@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
             .
           </li>
           <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+            Save and see your changes instantly okey.
           </li>
         </ol>
 
@@ -50,6 +51,9 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <Link href="/portfolio" className="text-blue-500 underline">
+          View my Portfolio
+        </Link>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
