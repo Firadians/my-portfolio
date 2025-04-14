@@ -1,106 +1,219 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly okey.
-          </li>
-        </ol>
+const projects = [
+  {
+    title: "KISUM – Music Entertainment App",
+    description:
+      "Track artists, analyze performance, and monitor industry trends. Similar to SoundCharts, with insights from streaming data and social media.",
+    image: "/project1.png",
+  },
+  {
+    title: "P·CLUB – Ticketing Platform",
+    description:
+      "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
+    image: "/project2.png",
+  },
+  {
+    title: "ACCESSFLOW – RFID Access App",
+    description:
+      "An access card system app using RFID and geolocation for restricted areas at PT Petrokimia Gresik. Includes login and news updates.",
+    image: "/project3.png",
+  },
+  {
+    title: "SEGMENTS – Internal HR App",
+    description:
+      "Built for the Security Department of PT Petrokimia Gresik. Includes live attendance, salary management, and security reports.",
+    image: "/project1.png",
+  },
+  {
+    title: "DEWANGGA – Batik Recognition App",
+    description:
+      "An Android app using ML & TFLite to recognize Indonesian batik patterns. Uses camera input and Firebase integration.",
+    image: "/project2.png",
+  },
+  {
+    title: "ENVIHELP – Volunteer Cleaning App (UI/UX)",
+    description:
+      "Volunteer app concept with bounty-based cleaning tasks. Designed to encourage environmental action through gamification.",
+    image: "/project3.png",
+  },
+];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+export default function Home() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="bg-[#f9f9f9] dark:bg-[#111] text-[#111] dark:text-white transition-colors duration-300">
+      {/* Navbar */}
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled ? "shadow-md bg-white/70 dark:bg-[#111]/70" : "bg-transparent"
+        } backdrop-blur-md border-b border-transparent dark:border-gray-800`}
+      >
+        <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-2"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/assets/logo/mfa_logo.png"
+              alt="MFA Logo"
+              width={32}
+              height={32}
+              className="object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </motion.div>
+
+          {/* Navigation */}
+          <ul className="flex space-x-6 text-sm font-medium">
+            {[
+              { label: "About", href: "#about" },
+              { label: "Projects", href: "#projects" },
+              { label: "Price", href: "#price" },
+              { label: "Contact", href: "#contact" },
+            ].map((item, i) => (
+              <motion.li
+                key={item.href}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 + 0.2 }}
+              >
+                <a
+                  href={item.href}
+                  className="relative text-gray-800 dark:text-gray-200 hover:text-blue-600 transition-colors duration-300 group"
+                >
+                  {item.label}
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col justify-center items-center text-center p-8 pt-40">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl sm:text-6xl font-bold mb-4"
+        >
+          Welcome to My Portfolio
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-lg sm:text-xl max-w-2xl text-gray-600 dark:text-gray-300"
+        >
+          Explore my projects, concepts, and creative experiments — from real-world mobile apps to UX design challenges.
+        </motion.p>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="p-8 py-16">
+        <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="relative overflow-hidden rounded-xl shadow-md bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={500}
+                  height={300}
+                  className={`transition-transform duration-500 ${
+                    hoveredIndex === index ? "scale-105" : "scale-100"
+                  }`}
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        <Link href="/portfolio" className="text-blue-500 underline">
-          View my Portfolio
+      </section>
+
+      {/* About */}
+      <section id="about" className="p-8 py-16 bg-gray-100 dark:bg-[#222] text-center">
+        <motion.h2
+          className="text-3xl font-bold mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          About Me
+        </motion.h2>
+        <motion.p
+          className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-lg mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          I’m Muhammad Firdaus Ardiansyah, a Flutter-focused mobile developer with experience in UI/UX, full stack development, and system analysis.
+          I've built and published apps that improve usability and scale, and I enjoy crafting beautiful user experiences.
+        </motion.p>
+        <Link
+          href="/about"
+          className="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300"
+        >
+          More About Me →
         </Link>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      </section>
+
+      {/* Pricing (placeholder) */}
+      <section id="price" className="p-8 py-16 text-center bg-white dark:bg-[#111]">
+        <h2 className="text-3xl font-bold mb-6">Pricing</h2>
+        <p className="text-gray-700 dark:text-gray-300">
+          Coming soon: Freelance pricing, project rates, and service packages.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="p-8 py-16 text-center">
+        <h2 className="text-3xl font-bold mb-6">Let's Work Together</h2>
+        <p className="mb-6 text-gray-700 dark:text-gray-300">
+          Have a project or collaboration idea? Let’s connect and make it happen!
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:mfirdausa30@gmail.com"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Contact Me
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <footer className="text-center text-sm py-6 text-gray-500 dark:text-gray-400">
+        &copy; {new Date().getFullYear()} Muhammad Firdaus Ardiansyah. All rights reserved.
       </footer>
     </div>
   );
