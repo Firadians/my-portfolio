@@ -458,7 +458,7 @@ export default function Home() {
                   onMouseEnter={enterHover}
                   onMouseLeave={leaveHover}
                 >
-                  <Link href={`/projects/${project.title.toLowerCase().split('–')[0].trim().replace(/\s+/g, '-')}`}>
+                  <Link href={`/projects/${project.title.toLowerCase().split(' ')[0].replace(/[^a-z0-9]/g, '')}`}>
                     <motion.div 
                       className="aspect-[4/3] overflow-hidden mb-6 bg-gray-50 relative"
                       whileHover={{ y: -5 }}

@@ -128,8 +128,21 @@ export default function ProjectDetailPage() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    // Type assertion to tell TypeScript that slug is a valid key
-    const projectData = projectsData[slug as keyof typeof projectsData];
+    // First try direct match
+    let projectData = projectsData[slug as keyof typeof projectsData];
+    
+    // If not found, try to find a matching key by normalizing both strings
+    if (!projectData) {
+      const normalizedSlug = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const matchingKey = Object.keys(projectsData).find(key => 
+        key.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSlug
+      );
+      
+      if (matchingKey) {
+        projectData = projectsData[matchingKey as keyof typeof projectsData];
+      }
+    }
+    
     if (projectData) {
       setProject(projectData);
     }
@@ -336,7 +349,7 @@ export default function ProjectDetailPage() {
                 .map(([slug, data]: [string, any]) => (
                   <Link 
                     key={slug} 
-                    href={`/projects/${data.title.toLowerCase().split('–')[0].trim().replace(/\s+/g, '-')}`}
+                    href={`/projects/${slug}`}
                     className="group"
                   >
                     <div className="aspect-video relative overflow-hidden mb-4">
