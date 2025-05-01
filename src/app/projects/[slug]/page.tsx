@@ -15,7 +15,7 @@ const projectsData = {
     fullDescription: "KISUM is a comprehensive music analytics and entertainment platform designed for artists, labels, and industry professionals. It offers deep insights into streaming performance, social media engagement, and market trends to help stakeholders make data-driven decisions.",
     challenge: "The music industry lacks accessible analytics that combine streaming performance with social media impact. Artists and labels need unified dashboards to understand their audience and track growth across platforms.",
     solution: "KISUM integrates APIs from major streaming services and social platforms, presenting unified analytics with intuitive visualizations. It features customizable dashboards, automated reports, and predictive trends using machine learning.",
-    technologies: ["Flutter", "Firebase", "Node.js", "TensorFlow", "Spotify API", "Twitter API", "YouTube API"],
+    technologies: ["Flutter", "Firebase", "TensorFlow", "Social Media API","Auth0","AWS"],
     features: [
       "Real-time streaming analytics",
       "Social media sentiment analysis",
@@ -29,7 +29,7 @@ const projectsData = {
       "/assets/details/kisum_detail1.png",
       "/assets/details/kisum_detail2.png"
     ],
-    duration: "8 months",
+    duration: "NaN",
     role: "Lead Mobile Developer & Product Manager",
     links: {
       github: "https://github.com/Firadians/kisum",
@@ -42,36 +42,96 @@ const projectsData = {
     fullDescription: "P·CLUB revolutionizes event ticketing with a focus on premium cultural experiences like ballet, opera, and exclusive concerts. The platform combines traditional ticketing with blockchain technology for secure, verifiable tickets.",
     challenge: "Traditional ticketing suffers from counterfeiting, scalping, and poor user experience. Event organizers need better tools to manage attendance and engage with audiences before and after events.",
     solution: "P·CLUB implements blockchain verification for ticket authenticity while maintaining a user-friendly interface. It includes features for event discovery, seat selection with AR preview, and post-event community engagement.",
-    technologies: ["Kotlin", "React", "Ethereum", "Firebase", "Google Maps API", "ARCore", "Stripe"],
+    technologies: ["Flutter", "MongoDB", "Stripe", "Firebase", "Google Maps API", "Deep Link"],
     features: [
-      "NFT-based ticket verification",
-      "Interactive seating charts with AR preview",
-      "Event recommendations based on preferences",
-      "Digital collectibles from attended events",
-      "Contactless venue entry",
-      "Secondary market with royalties to original organizers"
+      "Ticket Sales",
+      "Event Discovery",
+      "Seat Selection",
+      "Post-Event Community Engagement",
+      "Contactless Venue Entry",
+      "Secondary Market with Royalties to Original Organizers"
     ],
     images: [
       "/assets/banner/pclub_banner.png",
       "/assets/details/pclub_detail1.png",
       "/assets/details/pclub_detail2.png"
     ],
-    duration: "10 months",
-    role: "Full Stack Developer",
+    duration: "NaN",
+    role: "Mobile Developer",
     links: {
       github: "https://github.com/Firadians/pclub",
       live: "https://pclub-tickets.com"
     }
   },
+  "pclub_scanner": {
+    title: "P·CLUB SCANNER – Ticketing Platform",
+    description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
+    fullDescription: "P·CLUB revolutionizes event ticketing with a focus on premium cultural experiences like ballet, opera, and exclusive concerts. The platform combines traditional ticketing with blockchain technology for secure, verifiable tickets.",
+    challenge: "Traditional ticketing suffers from counterfeiting, scalping, and poor user experience. Event organizers need better tools to manage attendance and engage with audiences before and after events.",
+    solution: "P·CLUB implements blockchain verification for ticket authenticity while maintaining a user-friendly interface. It includes features for event discovery, seat selection with AR preview, and post-event community engagement.",
+    technologies: ["Kotlin", "React", "Ethereum", "Firebase", "Google Maps API", "ARCore", "Stripe"],
+    features: [
+      "Scanning Barcode Ticket",
+      "Promotor Dashboard",
+      "Metrics Statistics",
+      "Ticket Management",
+      "Contactless Venue Entry",
+    ],
+    images: [
+      "/assets/projects/pclub_scanner/1.png",
+    ],
+    duration: "NaN",
+    role: "Mobile Developer",
+    links: {
+      github: "https://github.com/Firadians/pclub",
+      live: "https://pclub-tickets.com"
+    }
+    
+  },
+  "pclub_artist": {
+    title: "P·CLUB ARTIST – Ticketing Platform",
+    description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
+    fullDescription: "P·CLUB revolutionizes event ticketing with a focus on premium cultural experiences like ballet, opera, and exclusive concerts. The platform combines traditional ticketing with blockchain technology for secure, verifiable tickets.",
+    challenge: "Traditional ticketing suffers from counterfeiting, scalping, and poor user experience. Event organizers need better tools to manage attendance and engage with audiences before and after events.",
+    solution: "P·CLUB implements blockchain verification for ticket authenticity while maintaining a user-friendly interface. It includes features for event discovery, seat selection with AR preview, and post-event community engagement.",
+    technologies: ["Kotlin", "React", "Ethereum", "Firebase", "Google Maps API", "ARCore", "Stripe"],
+    features: [
+      "Artist Dashboard",
+      "Ticket Management",
+      "Event Discovery",
+      "Seat Selection",
+      "Post-Event Community Engagement",
+      "Contactless Venue Entry",
+      "Secondary Market with Royalties to Original Organizers"
+    ],
+    images: [
+      "/assets/projects/pclub_artist/1.png",
+      "/assets/projects/pclub_artist/2.png",
+      "/assets/projects/pclub_artist/3.png",
+      "/assets/projects/pclub_artist/4.png",
+      "/assets/projects/pclub_artist/5.png",
+      "/assets/projects/pclub_artist/6.png",
+      "/assets/projects/pclub_artist/7.png",
+      "/assets/projects/pclub_artist/8.png",
+    ],
+    duration: "NaN",
+    role: "Mobile Developer",
+    links: {
+      github: "https://github.com/Firadians/pclub",
+      live: "https://pclub-tickets.com"
+    }
+  },
+
+  
   "accessflow": {
     title: "ACCESSFLOW – RFID Access App",
     description: "An access card system app using RFID and geolocation for restricted areas at PT Petrokimia Gresik. Includes login and news updates.",
     fullDescription: "ACCESSFLOW is an enterprise-grade access control system developed for PT Petrokimia Gresik's high-security areas. It combines RFID technology with mobile verification and real-time location tracking to ensure only authorized personnel can access sensitive locations.",
     challenge: "Traditional key card systems are vulnerable to sharing and don't provide adequate audit trails. The chemical manufacturing facilities required stricter access controls with multi-factor authentication.",
     solution: "ACCESSFLOW implements a dual verification system requiring both RFID cards and mobile authentication with biometrics. It includes geofencing, real-time monitoring, and comprehensive access logs for security compliance.",
-    technologies: ["Flutter", "Java", "RFID Integration", "Biometrics API", "Firebase", "MySQL", "Google Maps API"],
+    technologies: ["Flutter", "PHP", "RFID Integration", "Biometrics API", "Firebase", "MySQL", "Google Maps API"],
     features: [
-      "Multi-factor authentication",
+      "RFID Card",
       "Geofencing for location verification",
       "Real-time access monitoring dashboard",
       "Emergency protocols and alerts",
@@ -79,12 +139,17 @@ const projectsData = {
       "Company news and announcements integration"
     ],
     images: [
-      "/assets/banner/accessflow_banner.png",
-      "/assets/details/accessflow_detail1.png",
-      "/assets/details/accessflow_detail2.png"
+      "/assets/projects/accessflow/1.png",
+      "/assets/projects/accessflow/2.png",
+      "/assets/projects/accessflow/3.png",
+      "/assets/projects/accessflow/4.png",
+      "/assets/projects/accessflow/5.png",
+      "/assets/projects/accessflow/6.png",
+      "/assets/projects/accessflow/7.png",
+
     ],
-    duration: "6 months",
-    role: "Mobile Developer & Security Consultant",
+    duration: "7 months",
+    role: "Full Stack Mobile Developer",
     links: {
       github: "https://github.com/Firadians/accessflow",
       live: ""
@@ -96,9 +161,8 @@ const projectsData = {
     fullDescription: "SEGMENTS is a comprehensive HR and operations management platform designed specifically for the Security Department of PT Petrokimia Gresik. It streamlines workforce management, attendance tracking, and security reporting in one integrated system.",
     challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
     solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
-    technologies: ["Kotlin", "Laravel", "PostgreSQL", "Biometrics API", "GIS Integration", "JWT Authentication"],
+    technologies: ["Flutter", "Firebase", "GIS Integration", "Geofencing"],
     features: [
-      "Biometric attendance verification",
       "Shift scheduling with conflict resolution",
       "Automated payroll calculation",
       "Security incident reporting and analysis",
@@ -106,12 +170,142 @@ const projectsData = {
       "Performance analytics dashboard"
     ],
     images: [
-      "/assets/banner/segments_banner.png",
-      "/assets/details/segments_detail1.png",
-      "/assets/details/segments_detail2.png"
+      "/assets/projects/segments/1.png",
+      "/assets/projects/segments/2.png",
+      "/assets/projects/segments/3.png",
+      "/assets/projects/segments/4.png",
+      "/assets/projects/segments/5.png"
     ],
     duration: "7 months",
-    role: "Lead Backend Developer",
+    role: "Mobile Developer",
+    links: {
+      github: "https://github.com/Firadians/segments",
+      live: ""
+    }
+  },
+  "dewangga": {
+    title: "DEWANGGA – Batik Platform",
+    description: "A platform for selling batik products, with a focus on providing a seamless shopping experience for customers.",
+    fullDescription: "DEWANGGA is a platform for selling batik products, with a focus on providing a seamless shopping experience for customers.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Kotlin", "Tensorflow", "Tflite", "Google Cloud Platform", "Firebase", "Image Recognition"],
+    features: [
+      "Image Recognition",
+      "Object Detection",
+      "Image Classification",
+    ],
+    images: [
+      "/assets/projects/dewangga/1.png",
+      "/assets/projects/dewangga/2.png",
+      "/assets/projects/dewangga/3.png",
+      "/assets/projects/dewangga/4.png"
+    ],
+    duration: "2 months",
+    role: "Android Developer",
+    links: {
+      github: "https://github.com/Firadians/segments",
+      live: ""
+    }
+  },
+  "kenangin": {
+    title: "KENANGIN – E-Commerce Platform",
+    description: "An e-commerce platform for selling products, with a focus on providing a seamless shopping experience for customers.",
+    fullDescription: "KENANGIN is an e-commerce platform for selling products, with a focus on providing a seamless shopping experience for customers.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Figma", "Usability Testing", "User Research", "User Testing"],
+    features: [
+      "User Testing",
+      "Usability Testing",
+      "User Research",
+      "User Testing",
+    ],
+    images: [
+      "/assets/projects/kenangin/1.png",
+      "/assets/projects/kenangin/2.png",
+      "/assets/projects/kenangin/3.png",
+      "/assets/projects/kenangin/4.png"
+    ],
+    duration: "3 months",
+    role: "UI/UX Designer",
+    links: {
+      github: "https://github.com/Firadians/segments",
+      live: ""
+    }
+  },
+  "envihelp": {
+    title: "ENVIHELP – Environment Monitoring Platform",
+    description: "A platform for monitoring the environment, with a focus on providing a seamless monitoring experience for customers.",
+    fullDescription: "ENVIHELP is a platform for monitoring the environment, with a focus on providing a seamless monitoring experience for customers.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Jira", "Figma", "Microsoft Word"],
+    features: [
+       
+    ],
+    images: [
+      "/assets/projects/envirohelp/1.png",
+      "/assets/projects/envirohelp/2.png",
+      "/assets/projects/envirohelp/3.png",
+      "/assets/projects/envirohelp/4.png",
+      "/assets/projects/envirohelp/5.png",
+      "/assets/projects/envirohelp/6.png",
+      "/assets/projects/envirohelp/7.png"
+      
+    ],
+    duration: "3 months",
+    role: "Product Manager",
+    links: {
+      github: "https://github.com/Firadians/segments",
+      live: ""
+    }
+  },
+  "contactme": {
+    title: "CONTACTME – Contact Management Platform",
+    description: "A platform for managing contacts, with a focus on providing a seamless contact management experience for customers.",
+    fullDescription: "CONTACTME is a platform for managing contacts, with a focus on providing a seamless contact management experience for customers.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Flutter", "Firebase"],
+    features: [
+      "Biometric attendance verification",
+      "Shift scheduling with conflict resolution",
+      "Automated payroll calculation",  
+    ],
+    images: [
+      "/assets/projects/contactme/1.png",
+      "/assets/projects/contactme/2.png",
+      "/assets/projects/contactme/3.png",
+      "/assets/projects/contactme/4.png"
+    ],
+    duration: "1 months",
+    role: "Mobile Developer",
+    links: {
+      github: "https://github.com/Firadians/segments",
+      live: ""
+    }
+  },
+  "finflow": {
+    title: "FINFLOW – Personal Finance Tracker",
+    description: "A platform for managing personal finances, with a focus on providing a seamless personal finance tracking experience for customers.",
+    fullDescription: "FINFLOW is a platform for managing personal finances, with a focus on providing a seamless personal finance tracking experience for customers.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Flutter"],
+    features: [
+      "Biometric attendance verification",
+      "Shift scheduling with conflict resolution",
+      "Automated payroll calculation",  
+    ],
+    images: [
+      "/assets/projects/finflow/1.png",
+      "/assets/projects/finflow/2.png",
+      "/assets/projects/finflow/3.png",
+      "/assets/projects/finflow/4.png"
+    ],
+    duration: "1 months",
+    role: "Mobile Developer",
     links: {
       github: "https://github.com/Firadians/segments",
       live: ""

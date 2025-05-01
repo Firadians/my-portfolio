@@ -43,6 +43,13 @@ const projects = [
       "Volunteer app concept with bounty-based cleaning tasks. Designed to encourage environmental action through gamification.",
     image: "/assets/banner/envirohelp_banner.png",
   },
+  {
+    title: "FINFLOW – Personal Finance Tracker",
+    description:
+      "A platform for managing personal finances, with a focus on providing a seamless personal finance tracking experience for customers.",
+    image: "/assets/banner/finflow_banner.png",
+  },
+  
 ];
 
 const techLogos = [
@@ -53,6 +60,16 @@ const techLogos = [
   "/assets/tech/postman.png",
   "/assets/tech/figma.png",
   "/assets/tech/sql.png",
+];
+
+const techLogos2 = [
+  "/assets/tech/maze.png",
+  "/assets/tech/typescript.png",
+  "/assets/tech/aws.png",
+  "/assets/tech/auth0.png",
+  "/assets/tech/eraser.png",
+  "/assets/tech/git.png",
+  "/assets/tech/laravel.png",
 ];
 
 // Custom cursor component
@@ -225,7 +242,7 @@ export default function Home() {
           >
             {[
               { name: "Home", path: "/" },
-              { name: "Work", path: "/#work" },
+              { name: "Work", path: "/work" },
               { name: "About", path: "/about" }
             ].map((item, i) => (
               <motion.li
@@ -235,9 +252,18 @@ export default function Home() {
                 transition={{ delay: 0.1 * i + 0.3 }}
                 onMouseEnter={enterHover}
                 onMouseLeave={leaveHover}
+                className="z-50"
               >
-                <Link href={item.path} className="hover:text-[#967bb6] transition-colors relative group">
-                  <span className="relative z-10">{item.name}</span>
+                <Link 
+                  href={item.path} 
+                  className="hover:text-[#967bb6] transition-colors relative group z-50 pointer-events-auto block"
+                  onClick={(e) => {
+                    // Force navigation on click
+                    e.stopPropagation();
+                    window.location.href = item.path;
+                  }}
+                >
+                  <span className="relative z-50 pointer-events-auto">{item.name}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#967bb6] group-hover:w-full transition-all duration-300 z-0"></span>
                 </Link>
               </motion.li>
@@ -359,7 +385,7 @@ export default function Home() {
           <h2 className="text-center text-2xl font-light mb-6">Technologies</h2>
           
           {/* First row - left to right */}
-          <div className="overflow-hidden relative">
+          <div className="overflow-hidden relative mb-8">
             <motion.div
               className="flex whitespace-nowrap"
               initial={{ x: 0 }}
@@ -393,6 +419,42 @@ export default function Home() {
               ))}
             </motion.div>
           </div>
+          
+          {/* Second row - right to left (opposite direction) */}
+          <div className="overflow-hidden relative">
+            <motion.div
+              className="flex whitespace-nowrap"
+              initial={{ x: "-50%" }}
+              animate={{ x: "0%" }}
+              transition={{
+                duration: 120,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "linear",
+              }}
+            >
+              {/* Duplicate the array to create a seamless loop */}
+              {[...techLogos2, ...techLogos2].map((logo, index) => (
+                <div
+                  key={`logo-2-${index}`}
+                  className="mx-8 flex items-center justify-center group"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 relative overflow-hidden rounded-md">
+                    {/* Gray overlay that fades on hover */}
+                    <div className="absolute inset-0 bg-gray-200 opacity-40 group-hover:opacity-0 transition-opacity duration-300 z-10" />
+                    
+                    <Image
+                      src={logo}
+                      alt={`Technology Logo ${index + techLogos.length}`}
+                      fill
+                      sizes="(max-width: 768px) 64px, 80px"
+                      className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </section>
         
         {/* Statement section with typing effect */}
@@ -407,7 +469,7 @@ export default function Home() {
               onMouseEnter={enterHover}
               onMouseLeave={leaveHover}
             >
-              "I create digital experiences that marry <motion.span
+              "The polymath walks where <motion.span
                 className="italic text-[#967bb6]"
                 animate={{ 
                   color: ["#967bb6", "#c6a1f0", "#967bb6"] 
@@ -417,7 +479,7 @@ export default function Home() {
                   repeat: Infinity,
                   repeatType: "reverse"
                 }}
-              >form</motion.span> and <motion.span
+              >specialists</motion.span> stall, carving <motion.span
                 className="italic text-[#967bb6]"
                 animate={{ 
                   color: ["#967bb6", "#c6a1f0", "#967bb6"] 
@@ -428,26 +490,56 @@ export default function Home() {
                   repeatType: "reverse",
                   delay: 2
                 }}
-              >function</motion.span> in perfect harmony."
+              >function</motion.span> paths in electric skies."
             </motion.p>
           </div>
         </section>
         
-        {/* Projects section with elegant style and interactive hover */}
+        {/* Projects section with featured projects and count indicator */}
         <section id="work" className="py-32 bg-white">
           <div className="max-w-6xl mx-auto px-6">
-            <motion.h2 
-              className="text-2xl font-light mb-20 tracking-tight"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Selected Projects
-            </motion.h2>
+            <div className="flex justify-between items-center mb-20">
+              <div className="flex items-baseline">
+                <motion.h2 
+                  className="text-2xl font-light tracking-tight"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  Featured Projects
+                </motion.h2>
+                <motion.span
+                  className="ml-3 text-sm text-[#967bb6] bg-purple-50 px-2 py-1 rounded-full"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  {projects.length - 2}+
+                </motion.span>
+              </div>
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                onMouseEnter={enterHover}
+                onMouseLeave={leaveHover}
+              >
+                <Link 
+                  href="/work" 
+                  className="text-[#967bb6] hover:text-[#7a639a] transition-colors group flex items-center relative z-20"
+                >
+                  <span className="pointer-events-auto">View All</span>
+                  <span className="ml-1 group-hover:translate-x-1 transition-transform pointer-events-auto">→</span>
+                </Link>
+              </motion.div>
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
-              {projects.map((project, index) => (
+              {projects.slice(0, 2).map((project, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
