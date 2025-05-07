@@ -18,14 +18,14 @@ const allProjects = [
   {
     title: "P·CLUB – Ticketing Platform",
     description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
-    image: "/assets/banner/pclub_banner.png",
+    image: "/assets/projects/pclub/1.png",
     category: "Mobile App",
     year: "2024-Now"
   },
   {
     title: "P·CLUB SCANNER – Ticketing Platform",
     description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
-    image: "/assets/banner/pclub_banner.png",
+    image: "/assets/projects/pclub_scanner/1.png",
     category: "Mobile App",
     year: "2024-Now"
   },
@@ -35,6 +35,20 @@ const allProjects = [
     image: "/assets/banner/pclub_banner.png",
     category: "Mobile App",
     year: "Coming Soon"
+  },
+  {
+    title: "BLOCKGRAPH – Crypto Marketplace",
+    description: "A modern crypto marketplace for buying and selling crypto assets, inspired by Binance.",
+    image: "/assets/projects/blockgraph/1.png",
+    category: "Mobile App",
+    year: "2025"
+  },
+  {
+    title: "FINFLOW – Personal Finance Tracker",
+    description: "Elegant personal finance app for tracking expenses, budgeting, and financial goal planning.",
+    image: "/assets/projects/finflow/1.png",
+    category: "Mobile App",
+    year: "2025"
   },
   {
     title: "ACCESSFLOW – RFID Access App",
@@ -78,13 +92,6 @@ const allProjects = [
     category: "Mobile App",
     year: "2024"
   },
-  {
-    title: "FINFLOW – Personal Finance Tracker",
-    description: "Elegant personal finance app for tracking expenses, budgeting, and financial goal planning.",
-    image: "/assets/banner/finflow_banner.png",
-    category: "Mobile App",
-    year: "2025"
-  }
 ];
 
 // All possible categories for filtering

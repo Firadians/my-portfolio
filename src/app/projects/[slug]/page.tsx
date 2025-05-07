@@ -292,7 +292,7 @@ const projectsData = {
     fullDescription: "FINFLOW is a platform for managing personal finances, with a focus on providing a seamless personal finance tracking experience for customers.",
     challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
     solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
-    technologies: ["Flutter"],
+    technologies: ["Flutter", "Chart"],
     features: [
       "Biometric attendance verification",
       "Shift scheduling with conflict resolution",
@@ -304,10 +304,35 @@ const projectsData = {
       "/assets/projects/finflow/3.png",
       "/assets/projects/finflow/4.png"
     ],
-    duration: "1 months",
+    duration: "-",
     role: "Mobile Developer",
     links: {
-      github: "https://github.com/Firadians/segments",
+      github: "-",
+      live: ""
+    }
+  },
+  "blockgraph": {
+    title: "BLOCKGRAPH – Crypto Marketplace",
+    description: "A modern crypto marketplace for buying and selling crypto assets, inspired by Binance.",
+    fullDescription: "BLOCKGRAPH is a modern crypto marketplace for buying and selling crypto assets, inspired by Binance.",
+    challenge: "Manual HR processes led to inefficiencies in scheduling, attendance tracking, and payroll management. Security reports were siloed and difficult to correlate for comprehensive threat assessment.",
+    solution: "SEGMENTS centralizes all aspects of security personnel management with biometric attendance verification, automated scheduling, and integrated security incident reporting with threat analysis capabilities.",
+    technologies: ["Flutter", "Coingecko API", "Firebase", "Ethereum", "Solana", "Web3.js"],
+    features: [
+      "Biometric attendance verification",
+      "Shift scheduling with conflict resolution",
+      "Automated payroll calculation",  
+    ],
+    images: [
+      "/assets/projects/blockgraph/1.png",
+      "/assets/projects/blockgraph/2.png",
+      "/assets/projects/blockgraph/3.png",
+      "/assets/projects/blockgraph/4.png",
+    ],
+    duration: "-",
+    role: "Mobile Developer",
+    links: {
+      github: "-",
       live: ""
     }
   }

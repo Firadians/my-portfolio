@@ -20,6 +20,12 @@ const projects = [
     image: "/assets/banner/pclub_banner.png",
   },
   {
+    title: "BLOCKGRAPH – Crypto Marketplace",
+    description:
+      "A modern crypto marketplace for buying and selling crypto assets, inspired by Binance.",
+    image: "/assets/projects/blockgraph/1.png",
+  },
+  {
     title: "ACCESSFLOW – RFID Access App",
     description:
       "An access card system app using RFID and geolocation for restricted areas at PT Petrokimia Gresik. Includes login and news updates.",
