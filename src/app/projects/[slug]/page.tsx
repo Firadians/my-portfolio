@@ -36,58 +36,60 @@ const projectsData = {
       live: "https://kisum-app.com"
     }
   },
-  "pclub": {
-    title: "P·CLUB – Ticketing Platform",
-    description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
-    fullDescription: "P·CLUB revolutionizes event ticketing with a focus on premium cultural experiences like ballet, opera, and exclusive concerts. The platform combines traditional ticketing with blockchain technology for secure, verifiable tickets.",
-    challenge: "Traditional ticketing suffers from counterfeiting, scalping, and poor user experience. Event organizers need better tools to manage attendance and engage with audiences before and after events.",
-    solution: "P·CLUB implements blockchain verification for ticket authenticity while maintaining a user-friendly interface. It includes features for event discovery, seat selection with AR preview, and post-event community engagement.",
-    technologies: ["Flutter", "MongoDB", "Stripe", "Firebase", "Google Maps API", "Deep Link"],
-    features: [
-      "Ticket Sales",
-      "Event Discovery",
-      "Seat Selection",
-      "Post-Event Community Engagement",
-      "Contactless Venue Entry",
-      "Secondary Market with Royalties to Original Organizers"
-    ],
-    images: [
-      "/assets/banner/pclub_banner.png",
-      "/assets/details/pclub_detail1.png",
-      "/assets/details/pclub_detail2.png"
-    ],
-    duration: "NaN",
-    role: "Mobile Developer",
-    links: {
-      github: "https://github.com/Firadians/pclub",
-      live: "https://pclub-tickets.com"
-    }
-  },
-  "pclub_scanner": {
-    title: "P·CLUB SCANNER – Ticketing Platform",
-    description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
-    fullDescription: "P·CLUB revolutionizes event ticketing with a focus on premium cultural experiences like ballet, opera, and exclusive concerts. The platform combines traditional ticketing with blockchain technology for secure, verifiable tickets.",
-    challenge: "Traditional ticketing suffers from counterfeiting, scalping, and poor user experience. Event organizers need better tools to manage attendance and engage with audiences before and after events.",
-    solution: "P·CLUB implements blockchain verification for ticket authenticity while maintaining a user-friendly interface. It includes features for event discovery, seat selection with AR preview, and post-event community engagement.",
-    technologies: ["Kotlin", "React", "Ethereum", "Firebase", "Google Maps API", "ARCore", "Stripe"],
-    features: [
-      "Scanning Barcode Ticket",
-      "Promotor Dashboard",
-      "Metrics Statistics",
-      "Ticket Management",
-      "Contactless Venue Entry",
-    ],
-    images: [
-      "/assets/projects/pclub_scanner/1.png",
-    ],
-    duration: "NaN",
-    role: "Mobile Developer",
-    links: {
-      github: "https://github.com/Firadians/pclub",
-      live: "https://pclub-tickets.com"
-    }
-    
-  },
+ "pclub": {
+  "title": "P·CLUB – Social Ticketing Platform",
+  "description": "A complete event ticketing and social engagement app that connects users with events and each other. Supports ticket and table booking for concerts, DJ parties, and more.",
+  "fullDescription": "P·CLUB is a modern ticketing platform that empowers users to discover, book, and attend diverse events — from concerts to private parties — while connecting with fellow attendees. Promotors can easily create and publish events, manage tickets, and engage with the audience directly through the app.",
+  "challenge": "Event-goers struggle to find quality events and connect socially before attending. Organizers lack an efficient system to promote events and manage attendees.",
+  "solution": "P·CLUB offers a dual-role platform — users can explore events, book tickets or tables, chat with attendees, and select seats; while promotors can create events, manage bookings, and connect with their audience in real time.",
+  "technologies": ["Flutter", "MongoDB", "Stripe", "Firebase", "Google Maps API", "Deep Link", "AWS", "Chat System"],
+  "features": [
+    "Ticket & Table Booking",
+    "Event Discovery & Filtering",
+    "Promotor Event Dashboard",
+    "In-App Chat & Social Features",
+    "Seat Selection with Preview",
+    "Contactless Check-In Integration"
+  ],
+  "images": [
+    "/assets/projects/pclub/1.png",
+    "/assets/projects/pclub/2.png",
+    "/assets/projects/pclub/3.png",
+    "/assets/projects/pclub/4.png"
+  ],
+  "duration": "Ongoing",
+  "role": "Mobile Developer",
+  "links": {
+    "github": "https://github.com/Firadians/pclub",
+    "live": "https://pclub-tickets.com"
+  }
+},
+
+"pclub_scanner": {
+  "title": "P·CLUB SCANNER – Event Access & Analytics Tool",
+  "description": "A companion app for promotors to verify tickets at entry points and monitor event statistics in real time.",
+  "fullDescription": "P·CLUB SCANNER is designed for promotors to efficiently manage event access. The app scans digital or NFT-based tickets via barcode and provides real-time insights into attendance and crowd behavior, ensuring smooth operations and security.",
+  "challenge": "Event organizers face bottlenecks at entrances, ticket fraud, and a lack of data insights during live events.",
+  "solution": "The scanner app enables barcode ticket validation with live feedback, real-time attendance tracking, and access to metrics like check-in rates and user behavior analysis.",
+  "technologies": ["Flutter", "MongoDB", "Google Analytics", "Firebase", "Google Maps API", "Barcode Scanner"],
+  "features": [
+    "Ticket Barcode Scanning",
+    "Real-Time Check-In Dashboard",
+    "Promotor Analytics & Metrics",
+    "Event Access Control",
+    "Secure Ticket Validation with Blockchain"
+  ],
+  "images": [
+    "/assets/projects/pclub_scanner/1.png"
+  ],
+  "duration": "Ongoing",
+  "role": "Mobile Developer",
+  "links": {
+    "github": "https://github.com/Firadians/pclub",
+    "live": "https://pclub-tickets.com"
+  }
+}
+,
   "pclub_artist": {
     title: "P·CLUB ARTIST – Ticketing Platform",
     description: "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
