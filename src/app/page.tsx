@@ -17,7 +17,7 @@ const projects = [
     title: "P·CLUB – Ticketing Platform",
     description:
       "A modern ticketing platform for events like concerts, dance, ballet — supports NFT-based and digital tickets, inspired by Ticketmaster.",
-    image: "/assets/banner/pclub_banner.png",
+    image: "/assets/projects/pclub/1.png",
   },
   {
     title: "BLOCKGRAPH – Crypto Marketplace",
